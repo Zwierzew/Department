@@ -18,18 +18,18 @@ public class Main {
 
         // create departments
         Department finance = new Department("FIN", "Finance");
-        List<Employee> financeEmployees = new ArrayList<Employee>();
+        List<Employee> financeEmployees = List.of(person1, person2, person3);
         finance.addEmployee(person1);
         finance.addEmployee(person2);
         finance.addEmployee(person3);
 
         Department technology = new Department("TECH", "Technology");
-        List<Employee> technologyEmployees = new ArrayList<Employee>();
+        List<Employee> technologyEmployees = List.of(person4, person5);
         technology.addEmployee(person4);
         technology.addEmployee(person5);
 
         Department compliance = new Department("COM", "Compliance");
-        List<Employee> complianceEmployees = new ArrayList<Employee>();
+        List<Employee> complianceEmployees = List.of(person6, person7);
         compliance.addEmployee(person6);
         compliance.addEmployee(person7);
 
@@ -37,8 +37,6 @@ public class Main {
         printDepartmentInformation(technology, technologyEmployees);
         printDepartmentInformation(compliance, complianceEmployees);
         printTotalInformation(headcountList);
-        System.out.println(person2.getName() + " " + person2.getDepartment().getDepartmentName());
-
     }
     private static void printDepartmentInformation(Department department, List<Employee> employees){
         System.out.printf("%s [%s], headcount %d:",
@@ -47,7 +45,7 @@ public class Main {
                         department.getEmployees())
                 .println();
         for(Employee person : employees){
-            System.out.printf("%s [ID %d];", person.getName(), person.getId()).println();
+            System.out.printf("\t%s [ID %d];", person.getName(), person.getId()).println();
             // dlaczego nie printuje informacji o pracownikach?
         }
         System.out.println();
@@ -55,7 +53,7 @@ public class Main {
     private static void printTotalInformation(List<Employee> employees){
         System.out.printf("Total headcount %d:", employees.size()).println();
         for(Employee person : employees){
-            System.out.printf("%s [ID %d] department;",
+            System.out.printf("\t%s [ID %d] - department: %s;",
                             person.getName(),
                             person.getId(),
                             person.getDepartment().getDepartmentName()) //nie printuje nazwy departamentu?
