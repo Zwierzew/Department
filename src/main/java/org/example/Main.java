@@ -18,10 +18,17 @@ public class Main {
 
         // create departments
         Department finance = new Department("FIN", "Finance");
+<<<<<<< HEAD
         List<Employee> financeEmployees = List.of(person1, person2, person3);
         finance.addEmployee(person1);
         finance.addEmployee(person2);
         finance.addEmployee(person3);
+=======
+        List<Employee> financeEmployees = new ArrayList<Employee>();
+        financeEmployees.add(person1);
+        financeEmployees.add(person2);
+        financeEmployees.add(person3);
+>>>>>>> 8c719b7 (add changes from feature branch onto base branch)
 
         Department technology = new Department("TECH", "Technology");
         List<Employee> technologyEmployees = List.of(person4, person5);
