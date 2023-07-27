@@ -54,7 +54,7 @@ public class Main {
             System.out.printf("\t%s [ID %d] - department: %s;",
                             person.getName(),
                             person.getId(),
-                            person.getDepartment().getDepartmentName()) 
+                            person.getDepartment().getDepartmentName())
                             .println();
         }
     }
